@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import '../application.dart';
@@ -49,6 +51,13 @@ class FirstPage extends StatelessWidget {
                     context, Routes.fluro + "?string=aa&bool=false&num=12");
               },
               child: Text("url传递简单类型参数(stirng,boolean,number)"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Application.router.navigateTo(context,
+                    "${Routes.fluro}?cn=${Uri.encodeComponent("中国")}&city=${Uri.encodeComponent("重庆")}");
+              },
+              child: Text("fluro 传递中文参数"),
             ),
             RaisedButton(
               onPressed: () {
