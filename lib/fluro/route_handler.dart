@@ -18,10 +18,13 @@ var homeHandler = new Handler(
 });
 
 var fluroHandler = new Handler(
-    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  debugPrint("fluroHandler params:$params");
-  return FluroPage();
-});
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    debugPrint("fluroHandler params:$params");
+    return FluroPage(
+      params: params,
+    );
+  },
+);
 
 var returnParamPageHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {

@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import '../application.dart';
 
 class FirstPage extends StatelessWidget {
-  const FirstPage({Key key}) : super(key: key);
+  FirstPage({Key key}) : super(key: key);
   static const String routeName = "/firstPage";
 
   @override
   Widget build(BuildContext context) {
-    //获取路由参数
-    var args = ModalRoute.of(context).settings.arguments;
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('First Page'),
@@ -27,8 +25,20 @@ class FirstPage extends StatelessWidget {
               onPressed: () {
                 Application.router
                     .navigateTo(context, Routes.returnParamPage)
-                    .then((data) {
-                  print("result: $data");
+                    .then((Object data) {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        // 判断data的类型
+                        return SimpleDialog(
+                          title: const Text("标题"),
+                          children: <Widget>[
+                            Center(
+                              child: Text('${data.toString()}'),
+                            ),
+                          ],
+                        );
+                      });
                 });
               },
               child: Text("有参数返回的页面"),
@@ -38,7 +48,7 @@ class FirstPage extends StatelessWidget {
                 Application.router.navigateTo(
                     context, Routes.fluro + "?string=aa&bool=false&num=12");
               },
-              child: Text("简单类型参数传参(stirng,boolean,number)"),
+              child: Text("url传递简单类型参数(stirng,boolean,number)"),
             ),
             RaisedButton(
               onPressed: () {
