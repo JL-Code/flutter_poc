@@ -69,7 +69,13 @@ class FirstPage extends StatelessWidget {
               onPressed: () {
                 Application.router.navigateTo(context, Routes.io);
               },
-              child: Text("Flutter 读写文件"),
+              child: Text("Flutter IO"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Application.router.navigateTo(context, Routes.http);
+              },
+              child: Text("Flutter HTTP请求"),
             ),
           ],
         ),

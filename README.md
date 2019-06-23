@@ -1,7 +1,13 @@
 # flutter_poc
 
-- [ ]  flutter 集成 fluro 路由库
-- [ ]  flutter 操作文件
+- [x]  flutter 集成 fluro 路由库。
+- [x]  flutter IO。
+- [x]  flutter Dio 体验。
+  - [x] GET 请求。
+  - [x] POST 请求。
+- [x]  flutter JSON的序列化与反序列化。
+  - [x] 使用dart:convert 手动对JSON序列化与反序列化。
+  - [x] 使用json_serializable、json_annotation代码库实现对JSON的序列化与反序列化。
 
 ## Getting Started
 

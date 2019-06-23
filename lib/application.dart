@@ -23,6 +23,7 @@ class Routes {
   static String fluro = "/fluro";
   static String returnParamPage = "/returnParamPage";
   static String io = "/io";
+  static String http = "/http";
 
   static void configureRoutes(Router router) {
     /// 设置在未找到路由时的处理函数
@@ -38,6 +39,7 @@ class Routes {
     router.define(fluro, handler: fluroHandler);
     router.define(returnParamPage, handler: returnParamPageHandler);
     router.define(io, handler: ioHandler);
+    router.define(http, handler: httpHandler);
 //    router.define(demoParams, handler: demoParamHandler);
 //    router.define(returnParams, handler: returnParamHandler);
 //    router.define(transitionDemo, handler: transitionDemoHandler);
