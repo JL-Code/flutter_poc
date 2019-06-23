@@ -1,6 +1,7 @@
 # flutter_poc
 
-A new Flutter project.
+- [ ]  flutter 集成 fluro 路由库
+- [ ]  flutter 操作文件
 
 ## Getting Started
 

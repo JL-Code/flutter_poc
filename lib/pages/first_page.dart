@@ -65,6 +65,12 @@ class FirstPage extends StatelessWidget {
               },
               child: Text("复杂类型传参"),
             ),
+            RaisedButton(
+              onPressed: () {
+                Application.router.navigateTo(context, Routes.io);
+              },
+              child: Text("Flutter 读写文件"),
+            ),
           ],
         ),
       ),

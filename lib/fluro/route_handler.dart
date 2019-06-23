@@ -4,6 +4,7 @@ import 'package:flutter_poc/home_screen.dart';
 import 'package:flutter_poc/pages/first_page.dart';
 import 'package:flutter_poc/pages/fluro_home.dart';
 import 'package:flutter_poc/pages/return_param_page.dart';
+import 'package:flutter_poc/pages/io_page.dart';
 
 /// 跳转到首页
 var splashHandler = new Handler(
@@ -30,4 +31,10 @@ var returnParamPageHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   debugPrint("returnParamPageHandler params:$params");
   return ReturnParamPage();
+});
+
+var ioHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  debugPrint("ioHandler params:$params");
+  return IOPage();
 });
