@@ -44,12 +44,11 @@ class MyInheritedWidgetState extends State<MyInheritedWidget> {
 
 /// 利用InheritedWidget 内部的发布订阅模式 分发状态更新通知
 class _MyInherited extends InheritedWidget {
-  _MyInherited({Key key, this.child, this.state})
+  _MyInherited({Key key, @required Widget child, this.state})
       : super(key: key, child: child) {
     debugPrint("_MyInherited ctor");
   }
 
-  final Widget child;
   final MyInheritedWidgetState state;
 
   /// 是否应该通知订阅者（widget）更新

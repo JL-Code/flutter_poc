@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/my_Inherited_widget.dart';
+import 'my_Inherited_widget.dart';
 
 void main() => runApp(MyApp());
 

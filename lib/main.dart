@@ -1,9 +1,5 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_poc/pages/first_page.dart';
-import 'package:flutter_poc/pages/second_page.dart';
-import 'package:flutter_poc/pages/generate_route_page.dart';
-import 'package:flutter_poc/pages/fluro_home.dart';
 import 'package:flutter_poc/application.dart' show Routes, Application;
 
 void main() {

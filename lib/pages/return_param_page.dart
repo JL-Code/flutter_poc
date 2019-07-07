@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../application.dart';
 
 /// 返回参数测试页面
 class ReturnParamPage extends StatelessWidget {
