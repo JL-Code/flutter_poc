@@ -22,19 +22,6 @@ class MyApp extends StatelessWidget {
 
       /// 初始路由
       initialRoute: "/",
-//      routes: {
-//        FirstPage.routeName: (context) => FirstPage(),
-//        SecondPage.routeName: (context) => SecondPage(),
-//        FluroPage.routeName: (context) => FluroPage()
-//      },
-
-      /// 当在routers中没有找到route时调用此回调函数。
-//      onGenerateRoute: (RouteSettings settings) {
-//        debugPrint("onGenerateRoute ${DateTime.now()}");
-//        return MaterialPageRoute(builder: (BuildContext context) {
-//          return GenerateRoutePage();
-//        });
-//      },
       /// 由 fluro 接管 generateRoute处理函数
       onGenerateRoute: Application.router.generator,
 
@@ -61,101 +48,6 @@ class MyApp extends StatelessWidget {
 
       /// 导航监听
       navigatorObservers: [MyObserver()],
-//      home: Scaffold(
-//        appBar: new AppBar(
-//          title: new Text('Route&Navigator 学习'),
-//        ),
-//        body: Builder(
-//          builder: (BuildContext context) {
-//            return ListView(
-//              children: <Widget>[
-//                ListTile(
-//                  title: Text("通过命名路由，进入First Page"),
-//                  onTap: () async {
-//                    var result = await Navigator.pushNamed(
-//                        context, FirstPage.routeName,
-//                        arguments: "home arg1");
-//                    debugPrint(result);
-//                  },
-//                ),
-//                Divider(
-//                  height: 0.5,
-//                ),
-//                ListTile(
-//                  title: Text("通过MaterialPageRoute进入Second Page"),
-//                  onTap: () async {
-//                    var result = await Navigator.push(
-//                      context,
-//                      MaterialPageRoute(
-//                        builder: (context) {
-//                          return SecondPage();
-//                        },
-//                        fullscreenDialog: false,
-//                        settings: RouteSettings(
-//                          arguments: "second",
-//                          isInitialRoute: false,
-//                        ),
-//                      ),
-//                    );
-//                    debugPrint(result);
-//                  },
-//                ),
-//                Divider(
-//                  height: 0.5,
-//                ),
-//                ListTile(
-//                  title: Text("进入一个不存在的Page"),
-//                  onTap: () {
-//                    Navigator.pushNamed(context, "routeName");
-//                  },
-//                ),
-//                Divider(
-//                  height: 0.5,
-//                ),
-//                ListTile(
-//                  title: Text("自定义路由切换动画，进入Second Page"),
-//                  onTap: () async {
-//                    var result = await Navigator.push(
-//                      context,
-//                      PageRouteBuilder(
-//
-//                          ///动画时间 （默认300）
-//                          transitionDuration: Duration(milliseconds: 300),
-//
-//                          /// 页面构建器
-//                          pageBuilder: (BuildContext context,
-//                              Animation<double> animation,
-//                              Animation<double> secondaryAnimation) {
-//                            ///
-//                            return SlideTransition(
-//                              /// Tween 渐变动画
-//                              position: Tween<Offset>(
-//                                begin: const Offset(1.0, 0.0),
-//                                end: const Offset(0.0, 0.0),
-//                              ).animate(animation),
-//                              child: SecondPage(),
-//                            );
-//                          }),
-//                    );
-//                    debugPrint(result);
-//                  },
-//                ),
-//                Divider(
-//                  height: 0.5,
-//                ),
-//                ListTile(
-//                  title: Text("企业级路由 Fluro"),
-//                  onTap: () async {
-//                    var result =
-//                        await Navigator.pushNamed(context, FluroPage.routeName);
-//                    debugPrint(result);
-//                  },
-//                ),
-//              ],
-//            );
-//          },
-//        ),
-//      ),
     );
   }
 }

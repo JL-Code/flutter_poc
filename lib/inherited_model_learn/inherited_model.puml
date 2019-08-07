@@ -1,0 +1,51 @@
+@startuml inherited_model
+' 基本语法
+' --|> 表示继承
+' --*> 表示实现
+
+abstract class InheritedModel<T>
+{
+    # bool updateShouldNotifyDependent()
+    # bool isSupportedAspect()
+    + {static} T inheritFrom<T extends InheritedModel<Object>>\n(BuildContext context, { Object aspect })
+}
+abstract class InheritedWidget
+abstract class StatefulWidget
+abstract class StatelessWidget
+abstract class Widget
+
+abstract class BuildContext
+abstract class Element{
+   - Widget _widget
+'
+   - Element _parent
+   - int _depth
+   - BuildOwner _owner
+'当Element 被标记为需要rebuild则返回true
+   - bool _dirty
+   + RenderObject renderObject
+   + Element(Widget widget)
+   + void mount(Element parent, dynamic newSlot)
+   - _updateInheritance()
+   + rebuild()
+}
+abstract class ComponentElement{
+    - Element _child
+    + ComponentElement(Widget widget)
+    + void mount(Element parent, dynamic newSlot)
+}
+class InheritedElement
+class InheritedModelElement<T>
+class StatefulElement
+class StatelessElement
+
+'note top of InheritedModelElement : type 'T' 是 aspect 的类型。
+'实体关系
+Element ..|> BuildContext
+ComponentElement --|> Element
+StatefulElement --|> ComponentElement
+StatelessElement --|> ComponentElement
+InheritedModel --|> InheritedWidget
+InheritedModelElement --|> InheritedElement
+
+@enduml

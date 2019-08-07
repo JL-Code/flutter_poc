@@ -19,10 +19,13 @@ class MyApp extends StatelessWidget {
               InheritedModelView(type: NUMBER_TYPE.FIRST),
               InheritedModelView(type: NUMBER_TYPE.SECOND),
               InheritedModelView(type: NUMBER_TYPE.THIRD),
-              SizedBox(height: 15),
-              InheritedWidgetView(type: NUMBER_TYPE.FIRST),
-              InheritedWidgetView(type: NUMBER_TYPE.SECOND),
-              InheritedWidgetView(type: NUMBER_TYPE.THIRD)
+              // InheritedModelViewMulti(
+              //   types: [NUMBER_TYPE.SECOND, NUMBER_TYPE.THIRD],
+              // ),
+              // SizedBox(height: 15),
+//              InheritedWidgetView(type: NUMBER_TYPE.FIRST),
+//              InheritedWidgetView(type: NUMBER_TYPE.SECOND),
+//              InheritedWidgetView(type: NUMBER_TYPE.THIRD)
             ],
           ),
         ),

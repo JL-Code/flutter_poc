@@ -97,6 +97,29 @@ class InheritedModelView extends StatelessWidget {
   }
 }
 
+class InheritedModelViewMulti extends StatelessWidget {
+  final List<NUMBER_TYPE> types;
+  final _ColorRegistry r = _ColorRegistry();
+
+  InheritedModelViewMulti({this.types});
+
+  @override
+  Widget build(BuildContext context) {
+    var model0 = NumberModel.of(context, aspect: types[0]);
+    var model1 = NumberModel.of(context, aspect: types[1]);
+    return Container(
+      color: r.nextColor(),
+      padding: EdgeInsets.all(15.0),
+      child: Row(
+        children: <Widget>[
+          model0.getLabeledText(types[0]),
+          model1.getLabeledText(types[1])
+        ],
+      ),
+    );
+  }
+}
+
 class InheritedWidgetView extends StatelessWidget {
   final NUMBER_TYPE type;
   final _ColorRegistry r = _ColorRegistry();
